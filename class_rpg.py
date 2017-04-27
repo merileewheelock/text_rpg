@@ -1,6 +1,8 @@
 # Import the Hero class from Hero.py
 from Hero import Hero
+from Monster import Monster
 from Goblin import Goblin
+from Goblin import Hobgoblin
 from Vampire import Vampire
 from Werewolf import Werewolf
 from Win import Win
@@ -19,11 +21,16 @@ monsters_objects = []
 monsters_objects.append(Goblin())
 monsters_objects.append(Vampire())
 monsters_objects.append(Werewolf())
+monsters_objects.append(Hobgoblin())
 
 monsters = []
 for i in range(0, num_of_enemies):
-	rand = randint(0, len(monsters_objects) - 1)
-	monsters.append(monsters_objects[rand])
+	rand_num = randint(0, len(monsters_objects) - 1)
+	monsters.append(monsters_objects[rand_num])
+	# if (monsters_objects[rand_num] == "hobgolbin"):
+	# 	monsters.append(Hobgoblin())
+	# elif (monsters_objects[rand_num] == "vampire"):
+	# 	monsters.append(Vampire())
 
 for monster in monsters:
 	monster.health = monster.max_health
